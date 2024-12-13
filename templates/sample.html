@@ -1,0 +1,52 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ title }}</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 40px;
+                line-height: 1.6;
+            }
+            .header {
+                color: #333;
+                border-bottom: 2px solid #333;
+                margin-bottom: 20px;
+            }
+            .content {
+                margin: 20px 0;
+            }
+            .footer {
+                margin-top: 30px;
+                font-size: 0.9em;
+                color: #666;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>{{ title }}</h1>
+            <p>Generated on: {{ date }}</p>
+        </div>
+        
+        <div class="content">
+            <h2>{{ section_title }}</h2>
+            <p>{{ content }}</p>
+            
+            {% if items %}
+            <ul>
+                {% for item in items %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        
+        <div class="footer">
+            <p>Created using PDFGenerator</p>
+        </div>
+    </body>
+    </html>
+    
